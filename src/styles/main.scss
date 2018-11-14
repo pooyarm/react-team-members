@@ -1,0 +1,65 @@
+body {
+  font-family: 'Droid Sans', arial;
+}
+
+.members-list{
+  border: solid 1px #d0d3d4;
+  border-top: solid 3px #007672;
+
+  .members-list__title {
+    text-transform: uppercase;
+    color: #999999;
+  }
+  
+  .members-list__content {
+    
+    .member-list-item {
+      padding: 16px 10px;
+      height: 72px;
+
+      .member-list-item__avatar,
+      .member-list-item__remove {
+        height: 40px;
+        line-height: 40px;
+        width: 40px;
+        overflow: hidden;
+        text-align: center;
+
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      .member-list-item__remove {
+        display: none;
+      }
+
+      &:hover {
+        .member-list-item__avatar {
+          display: none;
+        }
+        .member-list-item__remove {
+          display: block;
+        }
+      }
+
+      &.member-list-item--add {
+
+      }
+
+      &.member-list-item--member {
+
+      }
+
+      .member-list-item__content {
+        margin-left: 10px;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 20px;
+      }
+
+    }
+
+  }
+}

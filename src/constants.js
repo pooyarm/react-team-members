@@ -1,0 +1,2 @@
+export const ACTION_ADD_MEMBER = 'ADD_MEMBER';
+export const ACTION_REMOVE_MEMBER = 'REMOVE_MEMBER';
