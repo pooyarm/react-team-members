@@ -18,7 +18,8 @@ body {
       height: 72px;
 
       .member-list-item__avatar,
-      .member-list-item__remove {
+      .member-list-item__remove,
+      .member-list-item__add-btn {
         height: 40px;
         line-height: 40px;
         width: 40px;
@@ -55,7 +56,27 @@ body {
       }
 
       &.member-list-item--add {
+        .member-list-item__add-btn {
+          color: #007672;
+          cursor: pointer;
+          background: #e2f4ea;
+          font-size: 26px;
+        }
+        
+        &.member-list-item--add--view {
+          cursor: pointer;
 
+          .member-list-item__content {
+            color: #007672;
+            max-width: 150px;
+          }
+        }
+
+        &:hover {
+          .member-list-item__add-btn {
+            background: #fff;
+          }
+        }
       }
 
       &.member-list-item--member {

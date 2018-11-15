@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { addMember } from '../actions';
+import AddMemberPresentation from '../presentations/add';
 
 class AddContainer extends Component {
     constructor(props) {
@@ -12,25 +13,17 @@ class AddContainer extends Component {
     }
     componentDidMount() {
     }
-    add() {
-        var userId = this.selectRef.current.value;
-        if (userId && this.props.users[userId]) {
+    add(userId) {
+        if (userId && this.props.users.filter((user) => user.id === userId).length > 0) {
             this.props.add(userId);
         }
     }
-    renderSelectOptions() {
-        return [
-            <option key='0' value=''>Select one</option>
-        ].concat(this.props.users.map((user) => {
-            return <option key={user.id} value={user.id}>{user.username}</option>;
-        }));
-    }
 	render() {
         return (
-            <div className="member-list-item member-list-item--add col-md-6 py-3">
-                <select ref={this.selectRef}>{this.renderSelectOptions()}</select>
-                <button onClick={this.add}>Add</button>
-            </div>
+            <AddMemberPresentation
+                addHandler={this.add}
+                users={this.props.users}
+            />
         )
     }
 }
