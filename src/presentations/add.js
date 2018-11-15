@@ -20,6 +20,13 @@ export default class AddMemberPresentation extends Component {
             showForm: true
         });
     }
+    hideForm(e) {
+        this.setState({
+            ...this.state,
+            showForm: false
+        });
+        e.stopPropagation();
+    }
     renderSelectOptions() {
         return [
             <option key='0' value=''>Select one</option>
@@ -51,8 +58,17 @@ export default class AddMemberPresentation extends Component {
     renderForm() {
         return (
             <div>
-                <select ref={this.selectRef}>{this.renderSelectOptions()}</select>
-                <button onClick={this.add}>Add</button>
+                <div className="members-list-add-popout">
+                    <div className="d-flex">
+                        <select className="form-control mr-2" ref={this.selectRef}>{this.renderSelectOptions()}</select>
+                        <button type="button" onClick={this.add} className="btn btn-info">
+                            <i className="fa fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    className="members-list-add-popout-overlay"
+                    onClick={this.hideForm.bind(this)}></div>
             </div>
         );
     }
