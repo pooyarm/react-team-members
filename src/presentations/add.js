@@ -40,7 +40,7 @@ export default class AddMemberPresentation extends Component {
         return (
             <div className="d-flex">
                 <div className="member-list-item__add-btn rounded-circle">
-                    +
+                    <i className="fa fa-plus"></i>
                 </div>
                 <div className="member-list-item__content flex-fill">
                     Add team member to this test

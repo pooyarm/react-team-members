@@ -15,7 +15,7 @@ export default class MemberItem extends Component {
                         <img src={picture} />
                     </div>
                     <div className="member-list-item__remove rounded-circle" onClick={this.remove.bind(this)}>
-                        X
+                        <i className="fa fa-times"></i>
                     </div>
                     <div className="member-list-item__content flex-fill">
                         <div className="member-list-item__userdata__role">{this.props.role}</div>

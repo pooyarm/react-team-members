@@ -10,6 +10,24 @@ body {
     text-transform: uppercase;
     color: #999999;
   }
+
+  .members-list__team-page {
+    color: #536663;
+    padding: 4px 10px;
+    line-height: 1.1;
+    cursor: pointer;
+
+    span {
+      text-transform: uppercase;
+      font-size: 10px;
+    }
+    .fa {
+      vertical-align: middle;
+    }
+    &:hover {
+      background: #e2f4ea;
+    }
+  }
   
   .members-list__content {
     
@@ -60,7 +78,6 @@ body {
           color: #007672;
           cursor: pointer;
           background: #e2f4ea;
-          font-size: 26px;
         }
         
         &.member-list-item--add--view {

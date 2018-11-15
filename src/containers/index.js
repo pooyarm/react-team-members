@@ -15,7 +15,13 @@ class App extends Component {
 	render() {
         return (
             <div className="members-list p-3">
-                <h6 className="members-list__title mb-3">Your team for this test</h6>
+                <div className="d-flex mb-2 justify-content-between">
+                    <h6 className="members-list__title mb-0 align-self-center">Your team for this test</h6>
+                    <div className="members-list__team-page">
+                        <span className="mr-1">Team page</span>
+                        <i className="fa fa-users"></i>
+                    </div>
+                </div>
                 <div className="members-list__content">
                     <div className="container">
                         <div className="row">
