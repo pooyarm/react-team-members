@@ -33,9 +33,19 @@ body {
 
       .member-list-item__remove {
         display: none;
+        color: #ff8951;
+        background: #fff;
+        cursor: pointer;
+        border: solid 1px #fff; 
+
+        &:hover {
+          border-color: #ff8951; 
+        }
       }
 
       &:hover {
+        background: #e2f4ea;
+
         .member-list-item__avatar {
           display: none;
         }
