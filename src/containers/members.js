@@ -9,22 +9,13 @@ class MembersListContainer extends Component {
         this.state = {
         };
     }
-    componentDidMount() {
-    }
     render() {
-        return this.props.members.map((user) => {
+        return this.props.members.slice(0,(this.props.limit > 0)?this.props.limit:undefined).map((user) => {
             return <MemberItem
                         key={user.id}
                         removeHandler={this.props.remove}
                         {...user} />;
         });
-    }
-	_render() {
-        return (
-            <div>
-                <ul>{this.renderMembersList()}</ul>
-            </div>
-        )
     }
 }
 

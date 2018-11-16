@@ -141,4 +141,17 @@ body {
     }
 
   }
+
+  .members-list__footer {
+
+    .members-list__more {
+      background: #e2f4ea;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 10px;
+      padding: 10px 0;
+      cursor: pointer;
+      color: #344e49;
+    }
+  }
 }
