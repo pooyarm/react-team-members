@@ -9,7 +9,7 @@ class App extends Component {
         super(props);
         this.showAll = this.showAll.bind(this);
         this.state = {
-            limit: 1
+            limit: 5
         };
     }
     showAll() {
@@ -42,7 +42,7 @@ class App extends Component {
         )
     }
     renderPagination() {
-        if (this.state.limit < 0) return null;
+        if (this.state.limit < 0 || this.state.limit >= this.props.membersCount) return null;
         return (
             <div className="members-list__more" onClick={this.showAll}>
                 <span>Show all</span>

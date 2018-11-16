@@ -8,11 +8,14 @@ import logger from 'redux-logger';
 import rootReducer from './reducers';
 
 import userData from './data.json';
+import { loadState, saveState } from './utils/localstorage';
 
-const base_structure = {
-    members: [1,2,3],
-    users: userData
+const defaultState = {
+    members: []
 };
+
+let presistedData = loadState() || defaultState;
+presistedData.users = userData;
 
 const enhancer = applyMiddleware(
     logger,
@@ -21,8 +24,14 @@ const enhancer = applyMiddleware(
 
 const store = createStore(
 	rootReducer,
-	base_structure,
+	presistedData,
     enhancer
 );
+
+store.subscribe(() => {
+    saveState({
+        members: store.getState().members
+    });
+});
 
 export default store;
